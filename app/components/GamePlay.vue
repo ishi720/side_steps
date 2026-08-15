@@ -5,7 +5,7 @@ import type { useSideStepGame } from '~/composables/useSideStepGame'
 
 const game = inject<ReturnType<typeof useSideStepGame>>('game')!
 const {
-  score, combo, timeDisplay, timePct, timeLow,
+  score, combo, misses, timeDisplay, timePct, timeLow,
   scorePop, comboPop, cueArrow, cueText,
   posLPct, posRPct, footprints, flashMessage,
   tryMoveFoot
@@ -23,6 +23,11 @@ const {
       <div class="sb-item">
         <div class="sb-label">COMBO</div>
         <div class="sb-value digits combo" :class="{ pop: comboPop }">{{ combo }}</div>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-item">
+        <div class="sb-label">MISS</div>
+        <div class="sb-value digits miss">{{ misses }}</div>
       </div>
     </div>
 
